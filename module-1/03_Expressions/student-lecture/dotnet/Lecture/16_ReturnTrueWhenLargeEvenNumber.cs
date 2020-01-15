@@ -16,8 +16,16 @@ namespace Lecture
         */
         public string ReturnBigEvenNumber(int number)
         {            
-            return null;
+            string returnString = "";
+            if (number > 100)
+            {
+                if (number % 2 == 0 && number % 5 == 0)
+                    returnString = "Big Even Number";
+                else
+                    returnString = "Big Number";
+            }
         }
+
         
 
 
