@@ -17,6 +17,8 @@ namespace Exercises
         */
         public bool HasTeen(int a, int b, int c)
         {
+            bool retValue = false;
+            bool isTeen = a 
             return false;
         }
 

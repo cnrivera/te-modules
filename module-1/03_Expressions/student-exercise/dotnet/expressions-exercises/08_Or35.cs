@@ -17,7 +17,15 @@ namespace Exercises
         */
         public bool Or35(int n)
         {
-            return false;
+            bool retValue = false;
+            bool isMultipleThree = n % 3 == 0;
+            bool isMultipleFive = n % 5 == 0;
+
+            if (isMultipleThree || isMultipleFive)
+                {
+                retValue = true;
+            }
+            return retValue;
         }
 
     }

@@ -14,10 +14,22 @@ namespace Arrays
             quizScores[2] = 85;
             quizScores[3] = 90;
 
+            quizScores[0] = 95;
+
+            //get average
+
+            int sum = quizScores[0] + quizScores[1] + quizScores[2] + quizScores[3];
+            double average = sum / quizScores.Length;
+
             //2. Creating an array of strings
             string[] names = new string[4] { "Josh", "David", "Craig", "Casey" };
 
+            // create and init in one step
+            int[] quizScores2 = { 100, 80, 85, 90 };
+            quizScores2[1] = 81; //change 80 to 81 for element at index 1;
+
             //3. Create an array of characters that hold "Tech Elevator"        
+
             char[] letters = { 'T', 'e', 'c', 'h', ' ', 'E', 'l', 'e', 'v', 'a', 't', 'o', 'r' };
 
             //4. Print out the first item in each array

@@ -17,7 +17,8 @@ namespace Lecture
         */
         public int[] ReturnNewArray()
         {
-            return null;
+            int[] array = new int[1];
+            return array;
         }
 
 
@@ -29,7 +30,8 @@ namespace Lecture
         */
         public int[] ReturnArrayOfKnownSize()
         {
-            return null;
+            int[] newArray = new int[100];
+            return newArray;
         }
 
         /*
@@ -40,7 +42,8 @@ namespace Lecture
         */
         public string[] ReturnArrayOfUnknownSize(int n)
         {
-            return null;
+            string[] stringArray = new string[n];
+            return n;
         }
 
         
