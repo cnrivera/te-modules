@@ -18,8 +18,15 @@ namespace Exercises
         public bool HasTeen(int a, int b, int c)
         {
             bool retValue = false;
-            bool isTeen = a 
-            return false;
+            bool isATeen = (a >= 13 && a <= 19);
+            bool isBTeen = (b >= 13 && b <= 19);
+            bool isCTeen = (c >= 13 && c <= 19);
+
+            if(isATeen || isBTeen || isCTeen)
+            {
+                retValue = true;
+            }
+            return retValue;
         }
 
     }

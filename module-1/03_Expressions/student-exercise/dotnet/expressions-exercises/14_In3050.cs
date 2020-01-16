@@ -17,7 +17,15 @@ namespace Exercises
          */
         public bool In3050(int a, int b)
         {
-            return false;
+            bool sameRange = false;
+            bool thirtyFourtyRange = (a >= 30 && a <= 40) && (b >= 30 && b <= 40);
+            bool fortyFiftyRange = (a >= 40 && a <= 50) && (b >= 40 && b <= 50);
+            
+            if(thirtyFourtyRange || fortyFiftyRange)
+            {
+                sameRange = true;
+            }
+            return sameRange;
         }
 
     }

@@ -21,7 +21,23 @@ namespace Exercises
         */
         public int DateFashion(int you, int date)
         {
-            return 0;
+            int gotTable = 1;
+
+            bool isStylish = (you >= 8) && (you <= 10);
+            bool isNotStylish = (you >= 0) && (you <= 2);
+            bool isDateStylish = (date >= 8) && (date <= 10);
+            bool isDateNotStylish = (date >= 0) && (date <= 2);
+
+            if (isNotStylish || isDateNotStylish)
+            {
+                gotTable = 0;
+            }
+            else if (isStylish || isDateStylish)
+            {
+                gotTable = 2;
+            }
+            
+            return gotTable;
         }
 
     }
