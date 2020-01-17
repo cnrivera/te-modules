@@ -19,9 +19,18 @@ namespace Exercises
         {
             bool firstLarger = (nums[0] > nums[nums.Length - 1]);
             bool lastLarger = (nums[nums.Length - 1] > nums[0]);
+            int higherRepeat = 0;
 
-           if(firstLarger )
-            return new int[3] { };
+            if (firstLarger)
+            {
+                higherRepeat = nums[0];
+            }
+
+            else if (lastLarger)
+            {
+                higherRepeat = (nums[nums.Length - 1]);
+            }
+            return new int[3] {higherRepeat, higherRepeat, higherRepeat};
         }
 
     }
