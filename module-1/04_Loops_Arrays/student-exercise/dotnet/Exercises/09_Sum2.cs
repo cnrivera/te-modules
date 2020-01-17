@@ -17,6 +17,7 @@ namespace Exercises
          */
         public int Sum2(int[] nums)
         {
+            if()
             return 0;
         }
 
