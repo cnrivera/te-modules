@@ -18,7 +18,14 @@ namespace Exercises
          */
         public bool SpecialEleven(int n)
         {
-            return false;
+            bool specialNumber = false;
+
+            if(n % 11 == 0 || n % 11 == 1)
+            {
+                specialNumber = true;
+            }
+
+            return specialNumber;
         }
 
     }
