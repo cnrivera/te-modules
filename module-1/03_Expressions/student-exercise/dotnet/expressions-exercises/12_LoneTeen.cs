@@ -20,10 +20,10 @@ namespace Exercises
           
             bool oneTeen = false;
 
-            bool isATeen = (a >= 13 && a <= 19);
-            bool isBTeen = (b >= 13 && b <= 19);
+            bool isTeenA = (a >= 13 && a <= 19);
+            bool isTeenB = (b >= 13 && b <= 19);
 
-            if(isATeen ^ isBTeen)
+            if(isTeenA ^ isTeenB)
             {
                 oneTeen = true;
             }
