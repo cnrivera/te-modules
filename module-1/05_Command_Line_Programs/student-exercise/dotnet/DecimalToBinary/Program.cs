@@ -6,13 +6,14 @@ namespace DecimalToBinary
     {
         static void Main(string[] args)
         {
-            
+            //PROGRAM NOT COMPLETE
+
             Console.Write("Please enter a series of decimal values (separated by spaces): ");
             string strDecValues = Console.ReadLine();
             string[] decValuesArr = strDecValues.Split(" ");
 
-            for (int i = 0; i < decValuesArr.Length; i++)
-            {
+            //for (int i = 0; i < decValuesArr.Length; i++)
+            //{
                 string ConvertNumberToBinary(int base10)
                 {
                     string binary = "";
@@ -24,7 +25,7 @@ namespace DecimalToBinary
 
                     //int decToBinary = int.Parse(decValuesArr[i]);
                     //Console.WriteLine( + "in binary is " + );
-                }
+                //}
             }
         }
     }
