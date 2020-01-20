@@ -6,8 +6,7 @@ namespace DecimalToBinary
     {
         static void Main(string[] args)
         {
-            //PROGRAM NOT COMPLETE
-
+            
             Console.Write("Please enter a series of decimal values (separated by spaces): "); //request information from user
             string strDecValues = Console.ReadLine(); //store input int a string
             string[] decValuesArr = strDecValues.Split(" "); //split string into an array using space char
@@ -19,11 +18,9 @@ namespace DecimalToBinary
 
             }
 
-            //int decToBinary = int.Parse(decValuesArr[i]);
-            //Console.WriteLine( + "in binary is " + );
-            //}
+            
         }
-        private static string ConvertNumberToBinary(int base10) // program says local function declared but never used?
+        private static string ConvertNumberToBinary(int base10)
         {
             string binary = "";
             while (base10 > 0)
