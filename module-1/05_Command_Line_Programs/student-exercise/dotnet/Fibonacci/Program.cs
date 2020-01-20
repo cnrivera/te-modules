@@ -8,23 +8,30 @@ namespace Fibonacci
         {
             Console.Write("Please enter the Fibonacci number: "); //make request of user
             int fibRequest = int.Parse(Console.ReadLine()); //input user response and parse as an integer
+
+            if (fibRequest == 0 || fibRequest == 1)
+            {
+                Console.Write(0);
+            }
+            else
+            {
+                Console.Write("0, 1, 1, "); 
+            }
+            int fib1 = 1;
+            int fib2;
+
+            for (int i = 1; i + fib1 <= fibRequest;)
+            {
+                fib2 = i + fib1;
+                i = fib1;
+                fib1 = fib2;
+                Console.Write(fib2 + ", ");
+            }
+
+            
+
            
-            Console.Write(0 + ", " + 1 + ", "); //account for first two numbers in sequence
 
-            //CODE BELOW DOES NOT YIELD RESULT. CREATES FIBONACCI SEQUENCE OF FIBREQUEST LENGTH, NOT UP TO FIBREQUEST TOTAL.
-            //STILL WORKING ON CORRECT RESULT.
-
-            int[] fibSequence = new int[fibRequest];
-            fibSequence[0] = 0;
-            fibSequence[1] = 1;
-
-                for (int i = 2; i < fibRequest; i++)
-                {
-                  fibSequence[i] = fibSequence[i - 1] + fibSequence[i - 2];
-               
-                  Console.Write(fibSequence[i] + ", ");
-                }
-
-    }
+        }
     }
 }
