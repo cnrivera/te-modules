@@ -18,7 +18,20 @@ namespace Exercises
         */
         public string ComboString(string a, string b)
         {
-            return null;
+            int aLength = a.Length;
+            int bLength = b.Length;
+            
+            string longest = a + b + a;
+
+            if (aLength > bLength)
+            {
+                longest = b + a + b;
+            }
+            else
+            {
+                return longest;
+            }
+            return longest;
         }
-    }
+}
 }

@@ -19,10 +19,14 @@ namespace CollectionsLectureNotes
 
             // Creating lists of integers
 
+            List<int> myList = new List<int>();
+            List<int> theSecondList = List < int{ }>
 
             // Creating lists of strings
 
 
+
+            List<string> myString = new List<String>();
 
             /////////////////
 
@@ -30,25 +34,39 @@ namespace CollectionsLectureNotes
             //////////////////
             // OBJECT EQUALITY
             //////////////////
-
-
+            if (myList == theSecondList) // ==to compare the empty list of integers)
+            {
+                Console.WriteLine ("The two lists are thes same")
+            }
+            else
+            {
+                Console.WriteLine("==compares addreses");
+            }
             /////////////////
             // ADDING ITEMS
             /////////////////
 
             // Adding items one at a time to each list
-
-
+            myList.Add(4);
+            myList.Add(200);
+            myListOfStrings.Add("c# is great");
             /////////////////
             // ADDING MULTIPLE ITEMS
             /////////////////
 
-
+            int[] numsToAdd = { 4, 5, 6 };
+            myList.AddRange(numsToAdd);
+            //myList.AddRange(theSecondList);
 
             //////////////////
             // ACCESSING BY INDEX
             //////////////////
 
+            for (int i = 0, i < myList.Count, i++)
+            {
+                Console.Write(myList[i] + " "); Console.Write($" {myList[i]} + ");
+
+            }
 
 
 

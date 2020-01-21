@@ -17,7 +17,17 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            
+            if (str.Length < 3)
+            {
+                return str;
+            }
+
+            char first = str[0];
+            char last = str[str.Length - 1];
+            string mid = str.Substring(1, str.Length - 2).Replace("x", "");
+           
+            return first + mid + last;
         }
     }
 }

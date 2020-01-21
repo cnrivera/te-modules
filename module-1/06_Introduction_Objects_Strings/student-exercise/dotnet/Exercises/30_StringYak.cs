@@ -17,7 +17,8 @@ namespace Exercises
          */
         public string StringYak(string str)
         {
-            return null;
+            string noYak = str.Replace("yak", "");
+            return noYak;
         }
     }
 }

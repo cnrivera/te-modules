@@ -17,7 +17,18 @@ namespace Exercises
          */
         public string MiddleTwo(string str)
         {
-            return null;
+            string stringDeadCenter = "";
+
+            if (str.Length == 2)
+            {
+                stringDeadCenter = str;
+            }
+            if (str.Length > 2)
+            {
+                stringDeadCenter = str.Substring((str.Length / 2) - 1, 2 );
+            }
+            
+            return stringDeadCenter;
         }
     }
 }

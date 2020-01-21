@@ -16,7 +16,9 @@ namespace Exercises
          */
         public bool EndsLy(string str)
         {
-            return false;
+            bool lyEnding = str.EndsWith("ly");
+           
+            return lyEnding;
         }
     }
 }

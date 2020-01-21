@@ -16,7 +16,17 @@ namespace Exercises
          */
         public int CountXX(string str)
         {
-            return 0;
+            int numX = 0;
+            
+            for(int i = 0; i <= str.Length - 2; i++)
+            {
+                if (str[i].Equals('x') && str[i + 1].Equals('x'))
+                {
+                    numX++;
+                }
+            }
+
+            return numX;
         }
     }
 }

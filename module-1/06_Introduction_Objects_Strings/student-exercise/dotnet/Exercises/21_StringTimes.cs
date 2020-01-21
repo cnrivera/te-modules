@@ -16,7 +16,14 @@ namespace Exercises
          */
         public string StringTimes(string str, int n)
         {
-            return null;
+            string multiCopy = "";
+
+          for (int i = 0; i < n; i++)
+          {
+                multiCopy = multiCopy + str;
+          }
+            
+            return multiCopy;
         }
     }
 }
