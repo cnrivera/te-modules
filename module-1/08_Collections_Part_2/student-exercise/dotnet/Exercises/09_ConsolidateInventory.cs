@@ -21,7 +21,22 @@ namespace Exercises
         public Dictionary<string, int> ConsolidateInventory(Dictionary<string, int> mainWarehouse,
             Dictionary<string, int> remoteWarehouse)
         {
-            return null;
+            Dictionary<string, int> mergedDict = new Dictionary<string, int>();
+
+            foreach(string item in mainWarehouse.Keys)
+            {
+                if (mainWarehouse.ContainsKey(item) == remoteWarehouse.ContainsKey(item))
+                {
+                    mergedDict.Add(item)
+                }
+                else
+                {
+                    mainWarehouse.Add(item);
+                }
+            }
+
+
+            return mergedDict;
         }
     }
 }
