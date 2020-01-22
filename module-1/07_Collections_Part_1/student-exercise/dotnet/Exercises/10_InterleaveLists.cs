@@ -18,7 +18,41 @@ namespace Exercises
          */
         public List<int> InterleaveLists(List<int> listOne, List<int> listTwo)
         {
-            return null;
+
+            // alternate one list into the other
+            //for loop to check indexes of one list, then the other, and add them to a new list?
+            //iterate to next index?
+            // if lists unequal length, last letters of longest list continue in order
+            //comparison??
+            // return new list
+
+            List<int> interwovenList = new List<int>();
+
+            int i;
+            for (i = 0; i < listOne.Count && i < listTwo.Count; i++)
+            {
+                interwovenList.Add(listOne[i]);
+                interwovenList.Add(listTwo[i]);
+            }
+
+            while (i < listOne.Count)
+            {
+                interwovenList.Add(listOne[i]);
+                i++;
+                   
+            }
+
+            while (i < listTwo.Count)
+            {
+                interwovenList.Add(listTwo[i]);
+                i++;
+            }
+            
+
+
+            return interwovenList;
+
+
         }
     }
 }

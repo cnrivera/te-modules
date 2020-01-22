@@ -16,7 +16,19 @@ namespace Exercises
          */
         public List<int> OddOnly(int[] integerArray)
         {
-            return null;
+            List<int> arrayList = new List<int>(); // created list for array
+            arrayList.AddRange(integerArray); // put array values in list
+            List<int> oddOnly = new List<int>(); //created list for odd numbers
+
+            foreach (int items in arrayList) // loops through numbers in arrayList
+            {
+                if (items % 2 == 1) // if not even...
+                {
+                    oddOnly.Add(items); //...add to new array
+                }
+            }
+            return oddOnly; // return array of odd numbers
+            
         }
 
     }
