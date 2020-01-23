@@ -21,21 +21,28 @@ namespace Exercises
         public Dictionary<string, int> ConsolidateInventory(Dictionary<string, int> mainWarehouse,
             Dictionary<string, int> remoteWarehouse)
         {
+
+
+
             Dictionary<string, int> mergedDict = new Dictionary<string, int>();
 
-            foreach(string item in mainWarehouse.Keys)
+            foreach (KeyValuePair<string, int> sku in mainWarehouse)
             {
-                if (mainWarehouse.ContainsKey(item) == remoteWarehouse.ContainsKey(item))
+                if (remoteWarehouse.ContainsKey(sku.Key))
                 {
-                    mergedDict.Add(item)
+                    mergedDict.Add(sku.Key, sku.Value + remoteWarehouse[sku.Key]);
                 }
                 else
                 {
-                    mainWarehouse.Add(item);
+                    mergedDict.Add(sku.Key, sku.Value);
                 }
             }
-
-
+            foreach(KeyValuePair<string, int> sku in remoteWarehouse)
+                if(!mergedDict.ContainsKey(sku.Key))
+                {
+                    mergedDict.Add(sku.Key, sku.Value);
+                }
+            
             return mergedDict;
         }
     }

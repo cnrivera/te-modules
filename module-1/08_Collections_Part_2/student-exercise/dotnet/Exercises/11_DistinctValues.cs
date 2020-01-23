@@ -12,11 +12,20 @@ namespace Exercises
          Given a list of strings, return a list that contains the distinct values. In other words, no value is to be
          included more than once in the returned list. (Hint: Think HashSet)
          DistinctValues( ["red", "yellow", "green", "yellow", "blue", "green", "purple"] ) -> ["red", "yellow", "green", "blue", "purple"]
-         DistinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
+         DistinctValues( ["jingle", "bells", 
+         "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
          */
         public List<string> DistinctValues(List<string> stringList)
         {
-            return null;
+            HashSet<string> hash = new HashSet<string>();
+            List<string> myList = new List<string>();
+
+            foreach(string s in stringList)
+            {
+                hash.Add(s);
+            }
+            return hash.ToList();
+
         }
 
     }
