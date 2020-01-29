@@ -4,35 +4,35 @@ using System.Text;
 
 namespace PostageCalculator.Classes
 {
-    class FexEd
+    class FexEd : IDeliveryDriver
     {
 
-        public bool IsOunces { get; }
-        
-
-        public FexEd()
-        {
-            //IsOunces = isOunces;
-           
-        }
-        
-
-        public double CalculateRate(int distance, double weight)
+        public double CalculateRate(int distance, double weight) //weight is in ounces
         {
             double rate = 20.00;
      
             //correct the method when I figure out what to do with miles and ounces
-            if (distance > 500 miles) 
+            if (distance > 500) 
                 {
                 rate += 5.00;
                 }
 
-            if (weight > 48 ounces)
+
+            if (weight > 48)
                 {
                 rate += 3.00;
                 }
+          
             return rate;
+
+
         }
 
+        public override string ToString()
+        {
+            string FexEd = "FexEd";
+
+            return FexEd;
+        }
     }
 }

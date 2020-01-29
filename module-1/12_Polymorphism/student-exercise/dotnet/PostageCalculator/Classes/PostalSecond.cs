@@ -4,14 +4,13 @@ using System.Text;
 
 namespace PostageCalculator.Classes
 {
-    public class PostalSecond : PostalService, IPostage
+    public class PostalSecond : IDeliveryDriver
     {
         public double CalculateRate(int distance, double weight)
         {
             double rate = 0;
 
-            if (IsOunces == true)
-            {
+                //ounces            
                 if (weight <= 2)
                 {
                     rate = 0.0035 * distance;
@@ -20,29 +19,32 @@ namespace PostageCalculator.Classes
                 {
                     rate = 0.0040 * distance;
                 }
-                else if (weight <= 15)
+                if (weight <= 15)
                 {
                     rate = 0.0047 * distance;
                 }
-            }
-
-            if (IsPounds == true)
-            {
-                if (weight <= 3)
+            
+                //pounds
+                else if (weight <= 3*16)
                 {
                     rate = 0.0195 * distance;
                 }
-                else if (weight <= 8)
+                else if (weight <= 8*16)
                 {
                     rate = 0.0450 * distance;
                 }
-                else if (weight > 8)
+                else if (weight > 8*16)
                 {
                     rate = 0.0500 * distance;
                 }
 
-            }
             return rate;
-        }  
+        }
+        public override string ToString()
+        {
+            string PostalSecond = "Postal Service (Second Class)";
+
+            return PostalSecond;
+        }
     }
 }

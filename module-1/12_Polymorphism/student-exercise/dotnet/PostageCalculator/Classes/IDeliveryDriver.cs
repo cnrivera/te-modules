@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PostageCalculator.Classes
 {
-    interface IPostage
+    interface IDeliveryDriver
     {
         double CalculateRate(int distance, double weight);
     }

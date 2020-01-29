@@ -46,3 +46,19 @@ cd into your own repositoyr
 git remote add upstream "https://bitbucket.org/te-cin-cohort-7/c-main"
 git config branch.master.mergeOptions "--no-edit"
 }
+
+public static class RNG
+{
+    private static Random random;
+
+    private static void Init()
+    {
+        if (random == null) random = new Random();
+    }
+
+    public static int GetRandomInt(int min, int max)
+    {
+        Init();
+        return random.Next(min, max + 1);
+    }
+}
