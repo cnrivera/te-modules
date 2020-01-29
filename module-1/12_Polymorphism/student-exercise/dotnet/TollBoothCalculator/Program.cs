@@ -18,17 +18,25 @@ namespace TollBoothCalculator
             vehicleTolls.Add(new Truck(8));
 
             Random random = new Random();
-           
+            int totalMiles = 0;
+            double totalRevenue = 0;
 
-
-            Console.WriteLine("Vehicle                   Distance Traveled                 Toll $");
-            Console.WriteLine("----------------------------------------------------------------------");
+            Console.WriteLine("{0, -20} {1, 10} {2, 14}", "Vehicle", "Distance Traveled", "Toll $");
+            Console.WriteLine("-----------------------------------------------------");
             foreach (IVehicle vehicle in vehicleTolls)
             {
                 int distance = random.Next(10, 240);
+                totalMiles += distance;
+                totalRevenue += vehicle.CalculateToll(distance);
 
-                Console.WriteLine($"{vehicle}                 {distance}                  ${vehicle.CalculateToll(distance)}");
+                Console.WriteLine("{0,-20} {1,10} {2,20:C}", vehicle, distance, vehicle.CalculateToll(distance));
+               
             }
+            
+            Console.WriteLine("");
+            Console.WriteLine($"Total Miles Traveled: {totalMiles}");
+            Console.WriteLine("Total TollBooth Revenue: " + "{0:C}", totalRevenue);
+            
         }
     }
 }
