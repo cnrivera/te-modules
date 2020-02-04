@@ -14,12 +14,11 @@ namespace Lecture.Aids
         */
         public static void WritingAFile()
         {
-            string directory = Environment.CurrentDirectory;
-            string filename = "output.txt";
+            string directory = Environment.CurrentDirectory; // C:\Users\Student\workspace\crivera-c\module-1\18_FileIO_Writing_out\student-exercise\dotnet
+            string filename = "FizzBuzz.txt";
             string fullPath = Path.Combine(directory, filename);
 
-            // Creates a new stream writer
-            // FALSE indicates that the file should be overwritten instead of appended to
+            
             using (StreamWriter sw = new StreamWriter(fullPath, true))
             {
                 // Prints the current datetime
