@@ -13,7 +13,8 @@ namespace file_io_part1_exercises
             string path = Environment.CurrentDirectory;
             string file = "sample-quiz-file.txt";
             string filepath = Path.Combine(path, file);
-
+            int tally = 0;
+            int totalQuestionsAsked = 0;
             try
             {
                 using (StreamReader sr = new StreamReader(filepath))
@@ -24,7 +25,8 @@ namespace file_io_part1_exercises
                         string[] originalList = line.Split("|");
                         string question = originalList[0];
                         string[] answerArray = { originalList[1], originalList[2], originalList[3], originalList[4] };
-                        string correctAnswer = "";
+                        int correctAnswer = 0;
+                        
                         
                         Console.WriteLine(question);
                         
@@ -34,26 +36,29 @@ namespace file_io_part1_exercises
                             while (originalList[i].EndsWith('*'))
                             {
                                 originalList[i] = originalList[i].TrimEnd('*');
-                                correctAnswer = originalList[i].ToLower();
+                                correctAnswer = i;
+                            
                             }
                            
-                            Console.WriteLine(originalList[i]);
+                            Console.WriteLine(i + "." + originalList[i]);
                         }
                        
                         //QuizMakerClass qmc = new QuizMakerClass(question, correctAnswer, answerArray.ToList());
                         //Console.WriteLine(qmc);
                         string userInput = Console.ReadLine();
 
-                        if (userInput == correctAnswer)
+                        if (int.Parse(userInput) == correctAnswer)
                         {
                             Console.WriteLine("Correct!");
+                            tally++;
+                           
 
                         }
                         else
                         {
                             Console.WriteLine("Sorry, incorrect.");
                         }
-
+                        totalQuestionsAsked++;
                         
 
 
@@ -67,6 +72,8 @@ namespace file_io_part1_exercises
                 Console.WriteLine(e.Message);
 
             }
+
+            Console.WriteLine($"You have {tally} of {totalQuestionsAsked} correct.");
             Console.ReadLine();
         }
     }
