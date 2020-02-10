@@ -62,3 +62,67 @@ public static class RNG
         return random.Next(min, max + 1);
     }
 }
+
+
+public class VendingMachineCLI
+{
+    private VendingMachine vendMach;
+
+    public void StartTheMachine()
+    {
+        ReadyTheInventory(); //this would use the vendMachine object or maybe you call vendMachine.ReadTheInventory();
+
+        string userChoice = "";
+        while (userChoice != "3")
+        {
+            Console.WriteLine("display the menu options");
+            userChoice = Console.ReadLine();
+
+            if (userChoice == "1")
+            {
+                DisplayItemList();
+            }
+            else if (userChoice == "2")
+            {
+                DisplayPurchaseMenu();
+            }
+            else if (userChoice == "4")
+            {
+                GenerateSalesReport();
+            }
+        }
+    }
+
+
+
+    public void DisplayItemList()
+    {
+        Console.WriteLine("display all the items from the object vendMach that's a class variable");
+    }
+
+    public void DisplayPurchaseMenu()
+    {
+        string userChoice = "";
+        while (userChoice != "3") //Finish gets you out of this menu
+        {
+            Console.WriteLine("display the purchase menu options");
+            userChoice = Console.ReadLine();
+
+            if (userChoice == "1")
+            {
+                FeedMoney();
+            }
+            else if (userChoice == "2")
+            {
+                SelectProduct();
+            }
+
+        }
+        FinishTransaction();
+    }
+
+    public void GenerateSalesReport()
+    {
+        Console.WriteLine("display all the items from the object vendMach that's a class variable");
+    }
+}
