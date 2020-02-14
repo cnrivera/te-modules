@@ -82,7 +82,6 @@ ROLLBACK TRANSACTION
 BEGIN TRANSACTION
 DELETE FROM film_category
 WHERE category_id = 17
-
 ROLLBACK TRANSACTION
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
@@ -104,3 +103,5 @@ ROLLBACK TRANSACTION
 -- 12. Check database metadata to determine all constraints of the film id, and
 -- describe any remaining adjustments needed before the film "Euclidean PI" can
 -- be removed from the film table.
+--Objects that still depend on film_id include film_actor, film_category, inventory (rental, payment). We would need to remove all references 
+--of Euclidean PI in these other tables in order to remove it from the film database.
