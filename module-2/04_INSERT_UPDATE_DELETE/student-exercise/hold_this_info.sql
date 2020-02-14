@@ -20,7 +20,7 @@ VALUES ('EUCLIDEAN PI', 'The epic story of Euclid as a pizza delivery boy in anc
 -- overprotective mother, in the film, "Euclidean PI". Add them to the film.
 
 INSERT INTO film_actor (actor_id, film_id)
-VALUES (201, 1001), (202, 1001)
+VALUES (201, 1002), (202, 1002)
 
 
 -- 4. Add Mathmagical to the category table.
@@ -32,74 +32,41 @@ VALUES ('Mathmagical')
 -- "EGG IGBY", "KARATE MOON", "RANDOM GO", and "YOUNG LANGUAGE"
 
 INSERT INTO film_category (film_id, category_id)
-VALUES (1001, 17), (274, 17), (494, 17), (714, 17), (996, 17)
+VALUES (1002, 18), (274, 18), (494, 18), (714, 18), (996, 18)
 
 
 -- 6. Mathmagical films always have a "G" rating, adjust all Mathmagical films
 -- accordingly.
 -- (5 rows affected)
+--UPDATE film_category
 
-UPDATE film
-SET film.rating = 'G'
-FROM film
-JOIN film_category ON film_category.film_id = film.film_id
+
+SELECT *
+FROM film_category
+JOIN film ON film_category.film_id = film_category.film_id
 JOIN category ON film_category.category_id = category.category_id
-WHERE category.name = 'Mathmagical'
-
+WHERE category.category_id = 18 AND film.rating = 'G'
 
 -- 7. Add a copy of "Euclidean PI" to all the stores.
-
-INSERT INTO inventory (film_id, store_id)
-VALUES (1001, 1), (1001, 2)
-
 
 -- 8. The Feds have stepped in and have impounded all copies of the pirated film,
 -- "Euclidean PI". The film has been seized from all stores, and needs to be
 -- deleted from the film table. Delete "Euclidean PI" from the film table.
 -- (Did it succeed? Why?)
 -- <YOUR ANSWER HERE>
--- No, because it has a reference constraint because film_id connects to film_actor so that actors can be associated with the films.
--- Other data relies on film_id, so it cannot be removed directly.
-BEGIN TRANSACTION
-DELETE FROM film
-WHERE film_id = 1001
-ROLLBACK TRANSACTION
 
 -- 9. Delete Mathmagical from the category table.
 -- (Did it succeed? Why?)
 -- <YOUR ANSWER HERE>
--- No, because it has a reference constraint that goes through film_category.
-BEGIN TRANSACTION
-DELETE FROM category
-WHERE name = 'Mathmagical'
-ROLLBACK TRANSACTION
 
 -- 10. Delete all links to Mathmagical in the film_category tale.
 -- (Did it succeed? Why?)
 -- <YOUR ANSWER HERE>
--- Yes, because via film_category, the category can be removed from all the films.
-
-BEGIN TRANSACTION
-DELETE FROM film_category
-WHERE category_id = 17
-
-ROLLBACK TRANSACTION
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
 -- to delete "Euclidean PI".
 -- (Did either deletes succeed? Why?)
 -- <YOUR ANSWER HERE>
--- Deleting 'Mathmagical' from category succeeded because we have removed the reference to this name in film_category, thus removing it from all films, so no films rely on it..
--- Deleting 'Euclidean PI' still does not work because we have not removed references to the film from film_actor, thus all the actor info still relies on it.
-BEGIN TRANSACTION
-DELETE FROM category
-WHERE name = 'Mathmagical'
-ROLLBACK TRANSACTION
-
-BEGIN TRANSACTION
-DELETE FROM film
-WHERE title = 'EUCLIDEAN PI'
-ROLLBACK TRANSACTION
 
 -- 12. Check database metadata to determine all constraints of the film id, and
 -- describe any remaining adjustments needed before the film "Euclidean PI" can

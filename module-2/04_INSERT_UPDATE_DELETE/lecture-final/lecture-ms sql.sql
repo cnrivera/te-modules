@@ -20,6 +20,7 @@ SELECT *
 FROM countrylanguage
 WHERE language = 'klingon';
 
+SELECT * FROM city WHERE name = 'Washington'
 
 
 -- UPDATE
