@@ -80,7 +80,10 @@ INSERT INTO employees (dept_id, last_name, first_name, job_title, gender, date_b
 INSERT INTO employees (dept_id, last_name, first_name, job_title, gender, date_birth, date_hire) VALUES (1004, 'Fox', 'Rebecca', 'designer', 'F', '1970-10-21', '2000-02-28')
 INSERT INTO employees (dept_id, last_name, first_name, job_title, gender, date_birth, date_hire) VALUES (1004, 'Rodriguez', 'Amarillis', 'senior designer', 'F', '1980-11-03', '1989-12-15')
 
-INSERT INTO employees_projects (employee_id, project_id) VALUES (10000, 100)
+INSERT INTO employees_projects (employee_id, project_id) 
+VALUES ((SELECT employee_id FROM employees WHERE last_name = 'Richards' AND first_name = 'Krista'), 
+(SELECT project_id FROM projects WHERE title = 'Costco Art Kits'))
+
 INSERT INTO employees_projects (employee_id, project_id) VALUES (10001, 103)
 INSERT INTO employees_projects (employee_id, project_id) VALUES (10013, 100)
 INSERT INTO employees_projects (employee_id, project_id) VALUES (10011, 103)
