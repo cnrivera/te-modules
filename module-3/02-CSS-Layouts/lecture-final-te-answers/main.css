@@ -42,7 +42,7 @@ body {
     ". header header  nav   nav   ."
     ". main   main    main  main  ."
     ". fall-festival fall-festival store store .";
-  grid-gap: 10px;
+  gap: 20px, 5px;
 }
 
 header {

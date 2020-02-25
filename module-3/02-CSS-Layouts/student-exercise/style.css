@@ -12,3 +12,80 @@ html {
     font-size: 16px;
 }
 
+
+#student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      /* "header header ." */
+      "headline headline ."
+      "quote quote picture"
+      "profile profile contact"
+      "experience experience experience";
+      /* "footer . ."; */
+
+    gap: 20px 50px;
+   
+  } 
+  
+  body {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+  .headline {
+    grid-area: headline;
+    color: var(--grey);
+    letter-spacing: 2px;
+    font-size: 50px;
+  }
+  
+  #student-quote {
+    grid-area: quote;
+    margin: auto;  
+    color: var(--grey);
+    line-height: 1.5;
+    font-size: 20px;
+  }
+
+  #student-picture{
+      grid-area: picture;
+      width: 250px;
+  }
+
+  #student-profile {
+    grid-area: profile;
+  }
+
+  #student-contact {
+    grid-area: contact;  
+    text-align: center;
+    color: var(--grey);
+    font-style: italic; 
+  }
+  
+  #experience {
+    grid-area: experience;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+ header > img {
+     width: 30%;
+ }
+
+ #student-picture > img{
+     border-radius: 180px;
+ }
+
+ div #experience > div {
+     margin-right: 35px;
+     margin-bottom: 5px;
+     width: 30%;
+     align-items: center;
+ }
+
+ #experience h3{
+     color: var(--blue);
+ }
