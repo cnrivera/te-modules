@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Fibonacci";
+    int max = Convert.ToInt32(ViewData["max"]);
 }
 
 <nav id="page-options">
@@ -10,6 +11,21 @@
     </ul>
 </nav>
 
-@*
-    REPLACE THIS COMMENT SECTION WITH YOUR UNORDERED LIST
-*@
+<ul id="fibonacci">
+
+    @{
+        int fib1 = 0;
+        int sumTwoPrev = 1;
+    }
+
+    
+    @for (int i = 1; i + fib1 <= max;)
+    {
+        sumTwoPrev = i + fib1;
+        i = fib1;
+        fib1 = sumTwoPrev;
+        <li>@(sumTwoPrev)</li>
+    }
+    
+
+</ul>
