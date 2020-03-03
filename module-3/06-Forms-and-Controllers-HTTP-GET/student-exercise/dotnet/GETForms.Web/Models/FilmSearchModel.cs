@@ -12,13 +12,23 @@ namespace GETForms.Web.Models
 
         [Display(Name = "Minimum Length: ")]
         public int MinLength { get; set; }
-      
+
         [Display(Name = "Maximum Length: ")]
         public int MaxLength { get; set; }
 
         [Display(Name = "Genre: ")]
         public string Genre { get; set; }
-    }
+
+
+        public FilmSearchModel()
+        {
+            MaxLength = 1000;
+        }
+
+
+}
+
+    
 
 
 }

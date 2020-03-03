@@ -41,7 +41,7 @@ git config --global diff.tool code
 git config --global difftool.code.cmd "code -w -d $LOCAL $REMOTE"
 
 clone your own repository
-cd into your own repositoyr
+cd into your own repository
 
 git remote add upstream "https://bitbucket.org/te-cin-cohort-7/c-main"
 git config branch.master.mergeOptions "--no-edit"
@@ -124,5 +124,17 @@ public class VendingMachineCLI
     public void GenerateSalesReport()
     {
         Console.WriteLine("display all the items from the object vendMach that's a class variable");
+    }
+
+    public static List<SelectListItem> CreateSelectListFromListOfStrings(IList<string> myList)
+    {
+        List<SelectListItem> mySelectList = new List<SelectListItem>();
+        foreach (string s in myList)
+        {
+            SelectListItem item = new SelectListItem() { Text = s, Value = s };
+            mySelectList.Add(item);
+        }
+        return mySelectList;
+
     }
 }

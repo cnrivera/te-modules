@@ -38,6 +38,7 @@ namespace GETForms.Web
             services.AddScoped<IActorDAO, ActorDAO>(d => new ActorDAO(connectionString));
             services.AddScoped<ICustomerDAO, CustomerDAO>(d => new CustomerDAO(connectionString));
             services.AddScoped<IFilmDAO, FilmDAO>(d => new FilmDAO(connectionString));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
