@@ -10,7 +10,13 @@ using Forms.Web.DAL;
 namespace Forms.Web.Controllers
 {
     public class HomeController : Controller
-    {        
+    {
+        private ICityDAO cityDAO;
+
+        public HomeController(ICityDAO c)
+        {
+            this.cityDAO = c;
+        }
         /// <summary>
         /// Represents an index action.
         /// </summary>
@@ -19,6 +25,16 @@ namespace Forms.Web.Controllers
         {
             return View();
         }   
+
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        public IActionResult SearchResults(CitySearchModel search)
+        {
+            return View();
+        }
         
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

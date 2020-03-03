@@ -1,0 +1,9 @@
+﻿@model List<Film>
+@{
+    ViewData["Title"] = "SearchResult";
+}
+
+@foreach (Film film in Model)
+{
+    <p>@film.Title @film.Description @film.ReleaseYear @film.Length @film.Rating</p>
+}

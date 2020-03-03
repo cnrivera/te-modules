@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "SearchResults";
+}
+
+<h2>SearchResults</h2>
+
+<h1>You have searched for cities in country @Model.CountryCode and district @Model.District</h1>
+
+@foreach (var city in Model.Results)
+{
+    <p> @city.Name @city.Population</p>
+}
+

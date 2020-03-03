@@ -32,6 +32,10 @@ namespace Forms.Web
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            string connectionString = Configuration.GetConnectionString("Default");
+            services.AddScoped<ICityDAO, CitySqlDAO>(d => new CitySqlDAO(connectionString)
+            // services.AddScoped<ICityDAO, MockCityDAO>
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

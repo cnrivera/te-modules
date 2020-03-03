@@ -10,13 +10,21 @@ namespace GETForms.Web.Controllers
 {
     public class FilmsController : Controller
     {
+        private IFilmDAO filmDAO;
+
+        public FilmsController(IFilmDAO dao)
+        {
+            this.filmDAO = dao;
+        }
         /// <summary>
         /// The request to display an empty search page.
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            return null;
+            IList<string> genre = filmDAO.GetGenres();
+            ViewData["genres"] = genre;
+            return View();
         }
 
         /// <summary>
@@ -24,10 +32,10 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*FilmSearch request */)
+        public ActionResult SearchResult(FilmSearchModel model)
         {
-            /* Call the DAL and pass the values as a model back to the View */
-            return null;
+            IList<Film> films = filmDAO.GetFilmsBetween(model.Genre, model.MinLength, model.MaxLength);
+            return View(films);
         }
     }
 }
