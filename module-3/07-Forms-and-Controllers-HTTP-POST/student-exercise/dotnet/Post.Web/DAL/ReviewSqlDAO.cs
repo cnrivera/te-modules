@@ -27,7 +27,7 @@ namespace Post.Web.DAL
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT username, rating, review_title, review_text, review_date FROM reviews", conn);
+                SqlCommand cmd = new SqlCommand("SELECT username, rating, review_title, review_text, review_date FROM reviews ORDER BY review_date DESC", conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
