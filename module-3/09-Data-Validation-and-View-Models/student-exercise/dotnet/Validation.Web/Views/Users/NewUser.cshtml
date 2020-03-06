@@ -1,0 +1,77 @@
+﻿@model RegistrationViewModel
+@{
+    ViewData["Title"] = "NewUser";
+}
+
+<h1>New User Registration</h1>
+
+<form asp-controller="Users" asp-action="NewUserConfirmation" method="post">
+    <div>
+        <label asp-for="FirstName"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="FirstName" placeholder="enter first name" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+
+    <div>
+        <label asp-for="LastName"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="LastName" placeholder="enter last name" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+
+    <div>
+        <label asp-for="NewEmail"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="NewEmail" placeholder="enter e-mail" />
+        <span asp-validation-for="NewEmail"></span>
+    </div>
+
+    <div>
+        <label asp-for="ConfirmEmail"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="ConfirmEmail" placeholder="confirm e-mail" />
+        <span asp-validation-for="ConfirmEmail"></span>
+    </div>
+
+    <div>
+        <label asp-for="NewPassword"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="NewPassword" placeholder="enter password" />
+        <span asp-validation-for="NewPassword"></span>
+    </div>
+
+    <div>
+        <label asp-for="ConfirmPassword"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="ConfirmPassword" placeholder="confirm password" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+
+    <div>
+        <label asp-for="Birthday"></label>
+    </div>
+    <div class="spacing">
+        <input type="date" asp-for="Birthday" />
+        <span asp-validation-for="Birthday"></span>
+    </div>
+
+    <div>
+        <label asp-for="NumTickets"></label>
+    </div>
+    <div class="spacing">
+        <input asp-for="NumTickets" placeholder="select number of tickets" />
+        <span asp-validation-for="NumTickets"></span>
+    </div>
+
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
