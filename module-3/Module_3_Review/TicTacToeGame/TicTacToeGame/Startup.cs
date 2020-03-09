@@ -37,7 +37,12 @@ namespace TicTacToeGame
             });
         }
 
+<<<<<<< HEAD
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+=======
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+>>>>>>> 27326b891d53b28be8e0d3e9b3e9262dcda7dac7
         {
             if (env.IsDevelopment())
             {

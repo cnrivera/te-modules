@@ -5,6 +5,7 @@
 
 <form asp-controller="Home" asp-action="RegisterUser" method="post">
     <div>
+<<<<<<< HEAD
         <label asp-for="Username"></label>
         <input asp-for="Username" />
     </div>
@@ -19,3 +20,17 @@
 
 
 </form>
+=======
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" />
+    </div>
+    <div>
+        <label asp-for="NumberOfRounds"></label>
+        <input asp-for="NumberOfRounds" />
+        <span asp-validation-for="NumberOfRounds"></span>
+    </div>
+
+    <input type="submit" value="Let's Play!" />
+
+</form>
+>>>>>>> 27326b891d53b28be8e0d3e9b3e9262dcda7dac7
