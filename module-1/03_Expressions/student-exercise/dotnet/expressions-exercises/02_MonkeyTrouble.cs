@@ -19,19 +19,26 @@ namespace Exercises
          */
         public bool MonkeyTrouble(bool aSmile, bool bSmile)
         {
-            bool trouble = false;
+            //bool trouble = false;
 
-            if(aSmile && bSmile)
+            //if(aSmile && bSmile)
+            //{
+            //    trouble = true;
+            //}
+            //if (!aSmile && !bSmile)
+            //{
+            //    trouble = true;
+            //}
+
+
+            //return trouble;
+
+            bool inTrouble = false;
+            if (aSmile && bSmile || !aSmile && !bSmile)
             {
-                trouble = true;
+                inTrouble = true;
             }
-            if (!aSmile && !bSmile)
-            {
-                trouble = true;
-            }
-            
-            
-            return trouble;
+            return inTrouble;
         }
 
     }

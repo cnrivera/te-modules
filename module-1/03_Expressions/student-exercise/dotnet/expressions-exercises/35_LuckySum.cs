@@ -20,30 +20,46 @@ namespace Exercises
          */
         public int LuckySum(int a, int b, int c)
         {
+            //int sum = a + b + c;
+
+            //if (a == 13 && b == 13)
+            //{
+            //    sum = 0;
+            //}
+            //else if (a == 13 && c == 13)
+            //{
+            //    sum = 0;
+            //} 
+            //else if (a == 13)
+            //{
+            //    sum = c;
+            //}
+            //else if (b == 13)
+            //{
+            //    sum = a;
+            //}
+            //else if (c == 13)
+            //{
+            //    sum = a + b;
+            //}
+
+            //return sum;
             int sum = a + b + c;
 
-            if (a == 13 && b == 13)
+            if (c == 13)
             {
-                sum = 0;
-            }
-            else if (a == 13 && c == 13)
-            {
-                sum = 0;
-            } 
-            else if (a == 13)
-            {
-                sum = c;
+                sum = a + b;
             }
             else if (b == 13)
             {
                 sum = a;
             }
-            else if (c == 13)
+            else if (a == 13)
             {
-                sum = a + b;
+                sum = c;
             }
-            
             return sum;
         }
+
     }
 }
