@@ -3,11 +3,12 @@ using System.Collections.Generic;
 
 namespace ProductReviewsAPI.Services {
     
-    interface IDataAccessLayer<T> {
-        List<T> GetAll();
-        T Get(int id);
-        void Add(T t);
-        void Update(T t);
+    public interface IDataAccessLayer<ProductReview>
+    { 
+        List<ProductReview> GetAll();
+        ProductReview Get(int id);
+        void Add(ProductReview productReview);
+        void Update(ProductReview productReview);
         void Delete(int id);
     }
 
