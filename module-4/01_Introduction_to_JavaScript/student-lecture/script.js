@@ -4,19 +4,37 @@
 
 // Single line comment
 
+//scope to file
+let globalScopedVariable = "global";
+
 /**
  * Functions start with the word function.
  * They don't have a return type and the naming convention is camel-case.
  */
 function variables() {
   // Declares a variable where the value cannot be changed
+  const daysPerWeek = 7;
+  console.log(`There are ${daysPerWeek} days in the week.`);
+  console.log(globalScopedVariable);
   // Declares a variable those value can be changed
+  let daysPerMonth = 30;
+  console.log(`There are ${daysPerMonth} days in the month`);
   // Declares a variable that will always be an array
+  const weekdays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ];    
+  console.table(weekdays);
+
 }
 
 /**
  * Functions can also accept parameters.
  * Notice the parameters do not have types.
+ * 
  * @param {Number} param1 The first number to display
  * @param {Number} param2 The second number to display
  */
@@ -74,10 +92,42 @@ function objects() {
   };
 
   // Log the object
-
+console.table(person);
   // Log the first and last name
+console.log(`${person.firstName} ${person.lastName}`);
+console.log(`Now let's concatenate`);
+console.log(person.firstName+ " "+person.lastName);
 
   // Log each employee
+  for(let i=0; i<person.employees.length; i++){
+    console.log(`Employee number ${i} is ${person.employees[i]}`);
+  
+  }
+  console.log(`Now do it with a foreach loop.`)
+  person.employees.forEach(element => console.log(element));
+
+  console.log("Now a table");
+  console.table(person.employees);
+
+  console.log(`Removing ${person.employees.pop()}`);
+  person.employees.push("Katie");
+  console.log("Added Katie");
+  person.employees.push("Will");
+  console.log("Added Will")
+
+  console.table(person.employee);
+
+  let students = [
+    "Joe",
+    "Kris",
+    "Kim",
+    "Irving",
+    "Tom"
+  ];
+  let newArray = person.employees.concat(students);
+  console.log("added student list to employees");
+  console.table(newArray);
+  
 }
 
 /*

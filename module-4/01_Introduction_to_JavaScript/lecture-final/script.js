@@ -107,7 +107,16 @@ function objects() {
     console.log(`Employee number ${i} is ${person.employees[i]}`);
   }
   console.log("Now do it with a foreach loop");
+
+
+
+
   person.employees.forEach(element => console.log(element));
+
+
+
+
+  
 
   console.log("Now a table");
   console.table(person.employees);
