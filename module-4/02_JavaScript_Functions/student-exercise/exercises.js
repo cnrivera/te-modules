@@ -235,11 +235,17 @@ function findLargest(array) {
 
 function getSumOfSubArrayValues(nestedArray = []) {
 
-arrayToAdd.reduce( (sum, array) => {
-      return sum + array.reduce(
-        (sum, number) => { return sum + number; }
+  if (!nestedArray) {
+    return 0;
+  }
 
-      );
-    }
+  let initialValue = 0;
+
+  return nestedArray.reduce((sum, array) => {
+    return sum + array.reduce((sum, number) => {
+      return sum + number;
+    }, initialValue
+    );
+  }, initialValue
   );
-}
+};
