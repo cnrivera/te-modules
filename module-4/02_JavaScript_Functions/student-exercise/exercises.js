@@ -232,7 +232,13 @@ function findLargest(array) {
  * Read the tests to verify you have the correct behavior.
  */
 
-
+/**
+ * Takes an array of arrays and reduces them to a single sum
+ * 
+ * 
+ * @param {number} nestedArray
+ * @returns {number} 
+ */
 function getSumOfSubArrayValues(nestedArray = []) {
 
   if (!nestedArray) {
