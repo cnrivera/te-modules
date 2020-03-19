@@ -1,6 +1,14 @@
 /*
  * Document this function
  */
+/**
+ * Function takes in month and day and returns appropriate hemisphere where it is summer during that timeframe.
+ * 
+ * @param {number} month 
+ * @param {number} [day = 1] 
+ * @param {string} [hemisphere = 'northern'] 
+ * @returns {string} if parameters match or @returns {boolean} if they do not
+ */
 function isSummer(month, day = 1, hemisphere = 'northern') {
   if (month === 7 || month === 8) {
     return hemisphere === 'northern';
@@ -41,6 +49,25 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {boolean} true if they are admitted
  */
 
+function isAdmitted(gpa, satScore = 0, recommendation = false) {
+
+  if (recommendation == true) {
+    if (gpa > 3.0 || satScore > 1200) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  else if (gpa > 4.0 || satScore > 1300) {
+    return true;
+  }
+  else {
+    return false;
+  }
+
+}
+
 /**
  * Write a function called useParameterToFilterArray so that it takes an anonymous
  * function and uses that in `unfilteredArray` filter function. Return the result.
@@ -49,6 +76,14 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+function useParameterToFilterArray(filterFunction) {
+  return unfilteredArray.filter(filterFunction); {
+    return number;
+  }
+
+}
+
 
 /**
  * Write a function called makeNumber to take two strings
@@ -63,6 +98,15 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the resultant number
  */
 
+function makeNumber(strFirst, strSecond = '') {
+  let dualString = strFirst + strSecond;
+  let newNum = parseInt(dualString);
+  return newNum;
+
+}
+
+
+
 /**
  * Write a function called addAll that takes an unknown number of parameters
  * and adds them all together. Return the result.
@@ -71,11 +115,34 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the sum of all the parameters (or arguments)
  */
 
+function addAll() {
+
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+
+
+}
+
+
+
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+
+function makeHappy(array) {
+  let happyNumbers = array.map(
+    (element) => {
+      return 'Happy ' + element;
+    }
+  );
+  return happyNumbers;
+}
+
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -94,6 +161,20 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *
  * Use `map` and an anonymous function.
  */
+/**
+ * Function takes an array of objects and maps each element to a const to create an array of addresses.
+ * 
+ * @param {object} objectArray 
+ * @returns {array} an array of mailing addresses as strings
+ */
+function getFullAddressesOfProperties(objectArray) {
+  const addresses = objectArray.map(
+    (element) => {
+      return `${element.streetNumber} ${element.streetName} ${element.streetType} ${element.city} ${element.state} ${element.zip}`
+    }
+  );
+  return addresses;
+}
 
 /*
  * Create and document a function called findLargest.
@@ -101,6 +182,37 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * Using `forEach`, find the largest element in an array.
  * It should work for strings and numbers.
  */
+
+/**
+ * 
+ * Takes an array and returns the largest number (if a number)
+ * or the string with highest alphabetical place
+ * 
+ * @param {string} or @param {number} array
+ * @returns {string} or @param {number}
+ */
+function findLargest(array) {
+  let largest = array[0];
+
+  array.forEach(
+    (element) => {
+      if (typeof array[0] == "string") {
+        if (element[0] > largest[0]) {
+          largest = element;
+        }
+      }
+      else {
+
+        if (largest < element) {
+          largest = element;
+        }
+
+      }
+    }
+  )
+  return largest;
+}
+
 
 /*
  * CHALLENGE
@@ -119,3 +231,15 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *
  * Read the tests to verify you have the correct behavior.
  */
+
+
+function getSumOfSubArrayValues(nestedArray = []) {
+
+arrayToAdd.reduce( (sum, array) => {
+      return sum + array.reduce(
+        (sum, number) => { return sum + number; }
+
+      );
+    }
+  );
+}

@@ -68,8 +68,8 @@ function scopeTest() {
 }
 
 /**
- * Take the details of a person and create a sententence to describe them
- * Quirks are joined by a seperator parameter or , by default
+ * Take the details of a person and create a sentence to describe them
+ * Quirks are joined by a separator parameter or , by default
  * 
  * @param {string} name name of the person we're describing
  * @param {number} age age of the person
@@ -113,7 +113,7 @@ function sumAllNumbers(numbersToSum) {
 }
 
 /**
- * This will convert an array of strings into one $ seprated string
+ * This will convert an array of strings into one $ separated string
  * @param {string[]} strArray  the array
  */
 function makeArrayOfStringsIntOne(strArray) {

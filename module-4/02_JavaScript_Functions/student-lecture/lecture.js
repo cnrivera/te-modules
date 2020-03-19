@@ -25,6 +25,11 @@ function printToConsole(value) {
  * @param {number} firstParameter the first parameter to multiply
  * @param {number} secondParameter the second parameter to multiply
  */
+function multiplyTogether(firstParameter, secondParameter) {
+  return firstParameter * secondParameter;
+
+}
+
 
 /**
  * This version makes sure that no parameters are ever missing. If
@@ -36,7 +41,10 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
+function multiplyNoUndefined(firstParameter = 0, secondParameter=0) {
+  return firstParameter * secondParameter;
 
+}
 /**
  * Scope is defined as where a variable is available to be used.
  *
@@ -47,6 +55,7 @@ function printToConsole(value) {
 function scopeTest() {
   // This variable will always be in scope in this function
   let inScopeInScopeTest = true;
+
 
   {
     // this variable lives inside this block and doesn't
@@ -73,7 +82,12 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce(
+    (sum, number) => {return sum + number;
+     }
+  );
+
+
 }
 
 /**
