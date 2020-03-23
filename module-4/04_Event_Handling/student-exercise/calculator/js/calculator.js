@@ -77,38 +77,53 @@ document.addEventListener('DOMContentLoaded', () => {
   // set the variable called display equal to the display element
   // HINT: use its id #display to get a reference to it
 
-  display = document.getElementById('display.calculator-screen')
+  display = document.getElementById('display');
 
   // get a reference to all of the numbers
   // loop over each of the numbers
   // add a click event listener to each number to call the function clickNumber
-  const numList = document.querySelectorAll('number')
+  const numList = document.querySelectorAll('.number');
   numList.forEach((num) => {
-    numList.addEventListener('click', (event) => {
+    num.addEventListener('click', (event) => {
       clickNumber(event);
     })
   });
 
-
-
   // get a reference to the decimal point button
   // add a click event listener to call the function clickNumber
   // the decimal point is part of the number so append it
-  const decimalButton = document.querySelector('decimal')
+  const decimalButton = document.querySelector('.decimal');
   decimalButton.addEventListener('click', (event) => {
-    clickNumber(event);
+    clickNumber(event)
+    //num.append('decimal', value)
   } 
-   )   
+   );
 
   // get a reference to the all clear button
   // add a click event listener to call the function clear  
+  const clearButton = document.querySelector(".all-clear");
+  clearButton.addEventListener('click', (event) => {
+    clear()
+  });
 
   // get a reference to all of the operators;
   // loop over each of the operators
   // add a click event listener to each operator to call the function clickOperator
+const allOps = document.querySelectorAll(".operator");
+allOps.forEach((operator) => {
+  operator.addEventListener('click', (event) => {
+    clickOperator()
+  })
+});
+
 
   // add click event listener for the equal sign
   // should call the function performOperation
+
+  const equalSign = document.querySelector(".equal-sign")
+  equalSign.addEventListener('click', (event) => {
+    performOperation()
+  });
 
 });
 
