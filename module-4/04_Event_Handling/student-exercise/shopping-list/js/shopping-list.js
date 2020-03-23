@@ -30,12 +30,62 @@ function displayGroceries() {
   groceries.forEach((item) => {
     const li = document.createElement('li');
     li.innerText = item.name;
+    li.setAttribute('class', 'test')
     const checkCircle = document.createElement('i');
     checkCircle.setAttribute('class', 'far fa-check-circle');
     li.appendChild(checkCircle);
     ul.appendChild(li);
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  setPageTitle();
+  displayGroceries();
 
-setPageTitle();
-displayGroceries();
+  const completeItem = document.querySelectorAll('li')
+  completeItem.forEach((grocery) => {
+    grocery.addEventListener('click', () => {
+      if (!grocery.classList.contains('completed')) {
+      grocery.classList.add('completed')
+        //grocery.setAttribute('class','completed')
+        let currentClassList = grocery.querySelector('i').getAttribute('class');
+        grocery.querySelector('i').setAttribute('class', currentClassList + ' ' + 'completed')
+        //grocery.querySelector('i').classList.add('completed')
+
+      }
+    })
+    grocery.addEventListener('dblclick', () => {
+      if (grocery.classList.contains('completed')) {
+        grocery.classList.remove('completed')
+
+        grocery.querySelector('i').classList.remove('completed')
+      }
+    })
+    
+
+  })
+
+  const completeAll = document.getElementById('toggleAll')
+    completeAll.addEventListener('click', () => {
+      completeItem.forEach((item) => {
+        if (allItemsIncomplete) {
+
+          item.classList.add('completed')
+          item.querySelector('i').classList.add('completed')
+          let toggleButton = document.getElementById('toggleAll');
+          toggleButton.innerText = 'Mark All Incomplete'
+
+
+        }
+        else {
+          item.classList.remove('completed')
+          item.querySelector('i').classList.remove('completed')
+          let toggleButton = document.getElementById('toggleAll');
+          toggleButton.innerText = 'Mark All Complete'
+
+        }
+
+
+      })
+      allItemsIncomplete = !allItemsIncomplete;
+    })
+})

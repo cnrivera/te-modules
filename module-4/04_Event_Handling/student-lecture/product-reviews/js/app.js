@@ -60,12 +60,35 @@ function displayReview(review) {
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
 
+document.addEventListener('DOMContentLoaded', () => {
+
+
 // set the product reviews page title
 setPageTitle();
+
 // set the product reviews page description
 setPageDescription();
 // display all of the product reviews on our page
 displayReviews();
+
+//add a listener to the description so if a user clicks on it, we call toggleDescription Edit
+const desc = document.querySelector('.description')
+desc.addEventListener('click', (event) => {
+  toggleDescriptionEdit(event.target);
+})
+
+const inputDesc = document.getElementById('inputDesc');
+inputDesc.addEventListener('keyup', (event) => {
+  if (event.key==='Enter') {
+    exitDescriptionEdit(event.target, true);
+  }
+  if (event.key==='Escape'){
+    exitDescriptionEdit(event.target, false)
+  }
+}) 
+
+
+
 
 /**
  * Take an event on the description and swap out the description for a text box.
