@@ -1,3 +1,30 @@
+let reviews=[];
+
+function loadReviews(){
+  console.log("Load Reviews...");
+  //do the fetch
+  fetch('data.json')
+  .then( (response) => {
+  return response.json();
+})
+.then( (data) => {
+  reviews = data;
+  displayReviews();
+})
+.catch( (err) => (console.error(err)})
+console.log("finish loading reviews");
+
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  //add event listener for our button
+  const button = document.querySelector('.btn');
+  button.addEventListener('click', (event) => {
+    loadReviews();
+    button.disabled = true;
+  
+  })
+})
+LoadImage();
 /**
  * This function when invoked will look at an array of reviews
  * and add it to the page by cloning the #review-template
@@ -23,6 +50,25 @@ function displayReviews() {
     } else {
       console.error('Your browser does not support templates');
     }
+}
+
+function LoadImage() {
+  console.log("let's get a cat image");
+  fetch('https://api.thecatapi.com/v1/images/search?category_ids=15')
+  .then( (response) => {
+    return response.json();
+
+  })
+  .then ( (data) => {
+    SetCatPicUrl(data[0].url)
+  })
+}
+
+function SetCatPicUrl(url){
+  //grab the image element
+  const imgElement = document.getElementById('cat-pic');
+  //set source to url
+  imgElement.src = url;
 }
 
 
