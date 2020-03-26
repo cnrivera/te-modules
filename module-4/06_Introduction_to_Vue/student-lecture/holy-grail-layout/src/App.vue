@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <header>Header</header>
-    <aside class="sidebar-left">Left Sidebar</aside>
-    <article>Article</article>
+    <the-header></the-header>
+    <left-side-bar></left-side-bar>
+    <main-content></main-content>
     <aside class="sidebar-right">Right Sidebar</aside>
     <footer>Footer</footer>
   </div>
 </template>
 
 <script>
+import TheHeader from "@/components/TheHeader"
+import LeftSideBar from "@/components/LeftSideBar"
+import MainContent from "@/components/MainContent"
+
 export default {
   name: "app",
-  components: {}
+  components: {
+    TheHeader,
+    LeftSideBar,
+    MainContent
+  }
 };
 </script>
 
