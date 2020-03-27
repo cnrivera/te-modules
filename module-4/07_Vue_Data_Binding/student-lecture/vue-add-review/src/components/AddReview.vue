@@ -56,7 +56,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      review: {
+        title: "",
+        reviewer: "",
+        rating: "",
+        review: ""
+      }
+    };
   }
 };
 </script>

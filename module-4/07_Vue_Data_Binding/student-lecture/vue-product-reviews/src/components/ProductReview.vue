@@ -6,32 +6,32 @@
 
         <div class="well-display">
             <div class="well">
-                <span class="amount">-</span>
+                <span class="amount">{{averageRating}}</span>
                 Average Rating
             </div>
 
             <div class="well">
-                <span class="amount">-</span>
+                <span class="amount">{{ numOneStarRating}}</span>
                 1 Star Review
             </div>
 
             <div class="well">
-                <span class="amount">-</span>
+                <span class="amount">{{numTwoStarRating}}</span>
                 2 Star Review
             </div>
 
             <div class="well">
-                <span class="amount">-</span>
+                <span class="amount">{{numThreeStarRating}}</span>
                 3 Star Review
             </div>
 
             <div class="well">
-                <span class="amount">-</span>
+                <span class="amount">{{numFourStarRating}}</span>
                 4 Star Review
             </div>
 
             <div class="well">
-                <span class="amount">-</span>
+                <span class="amount">{{numFiveStarRating}}</span>
                 5 Star Review
             </div>
         </div>
@@ -41,6 +41,7 @@
             <div class="rating">
                 <img src="../assets/star.png" v-bind:title="review.rating + ' Star Review'" class="ratingStar" v-for="n in review.rating" />
             </div>
+            <fieldset v-show="review.rating> 3"> <h1> WOW </h1> </fieldset>
             <h3>{{ review.title }}</h3>
 
             <p>{{ review.review }}</p>
@@ -86,6 +87,69 @@ export default {
                 }
             ]
         };
+    },
+    computed: {
+        averageRating () {
+            let sum = this.reviews.reduce ( (sum, review) => {
+                return sum + review.rating;
+            },0)
+
+            return sum/this.reviews.length
+        },
+
+        numOneStarRating(){
+            let count = 0;
+            this.reviews.forEach(review => {
+                if(review.rating == 1) {
+                    count++;
+                }
+            });
+            return count;
+        },
+
+         numTwoStarRating(){
+            let count = 0;
+            this.reviews.forEach(review => {
+                if(review.rating == 2) {
+                    count++;
+                }
+            });
+            return count;
+        },
+
+               numThreeStarRating(){
+            let count = 0;
+            this.reviews.forEach(review => {
+                if(review.rating == 3) {
+                    count++;
+                }
+            });
+            return count;
+        },
+
+        numFourStarRating(){
+            let count = this.reviews.reduce( (sum, review) => {
+                if(review.rating==4) {
+                    sum++
+                
+                }
+                return sum;
+            }, 0)
+            return count;
+        },
+
+          numFiveStarRating(){
+            return this.reviews.reduce( (sum, review) => {
+                if(review.rating==5) {
+                    sum++
+                
+                }
+                return sum;
+            }, 0)
+            
+        }
+
+
     }
 }
 </script>
