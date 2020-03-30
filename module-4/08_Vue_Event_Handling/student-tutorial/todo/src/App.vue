@@ -1,6 +1,11 @@
 <template>
   <div id="todo-app">
-    <todo-list></todo-list>
+    <todo-list>
+      <li v-for="todo in todos" v-bind:key="todo.task" v-bind:class="{'todo-completed': todo.completed}">
+    <input type="checkbox" @click="changeStatus()"/>
+    {{todo.task}} <i class="far fa-check-circle" v-bind:class="{completed: todo.completed}"></i>
+    </li>
+    </todo-list>
   </div>
 </template>
 
@@ -12,7 +17,19 @@ export default {
   components: {
     TodoList
   }
+  
 }
+
+methods: {
+    changeStatus() {
+      <li v-for="todo in todos" v-bind:key="todo.id" v-bind:class="{'todo-completed': todo.completed}">
+    <input type="checkbox" v-on:click="changeStatus(todo.id)"/>
+    {{todo.task}} <i class="far fa-check-circle" :class="{completed: todo.completed}"></i>
+</li>
+        
+    }
+}
+
 </script>
 
 <style>

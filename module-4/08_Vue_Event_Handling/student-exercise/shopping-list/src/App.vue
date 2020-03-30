@@ -11,6 +11,10 @@ export default {
   name: 'app',
   components: {
     ShoppingList
+
+
+
+    
   }
 }
 </script>
