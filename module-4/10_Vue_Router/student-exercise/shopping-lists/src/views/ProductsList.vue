@@ -26,6 +26,7 @@ export default {
     }
   },
   created() {
+    this.getProducts(this.$route.params.department)
 
   }
 }

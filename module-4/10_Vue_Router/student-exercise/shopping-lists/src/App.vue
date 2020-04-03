@@ -2,13 +2,13 @@
   <div id="app">
     <header>
       <ul class="nav">
-        <li><i class="fas fa-home"></i>Home</li>
-        <li><i class="fas fa-shopping-basket"></i>Shop By Department</li>
-        <li><i class="fas fa-coins"></i>On Sale This Week</li>
+        <li><router-link to="/" class="home"><i class="fas fa-home"></i>Home</router-link><li>
+        <li><router-link to="/products" class="products"><i class="fas fa-shopping-basket"></i>Shop By Department</router-link></li>
+        <li><router-link to="/on-sale" class="onsale"><i class="fas fa-coins"></i>On Sale This Week</router-link></li>
       </ul>
       <ul class="nav-right">
-        <li><i class="fas fa-shopping-cart"></i>Shopping Cart</li>
-        <li><i class="fas fa-cash-register"></i>Checkout</li>
+        <li><router-link to="/cart" class="cart"><i class="fas fa-shopping-cart"></i>Shopping Cart</router-link>
+        <li><router-link to="/checkout" class="checkout"><i class="fas fa-cash-register"></i>Checkout</router-link></li>
       </ul>
     </header>
     <div class="content">

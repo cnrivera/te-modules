@@ -38,7 +38,7 @@
 export default {
   data() {
     return {
-      apiURL: "",
+      apiURL: "http://5e86a415781e48001676b28a.mockapi.io/api/todos",
       todos: [],
       showTodoForm: false,
       newTodo: ""
@@ -51,9 +51,17 @@ export default {
     },
     toggleForm() {
       // show hide form
+       this.showTodoForm = !this.showTodoForm;
     },
     addTodo() {
       // tutorial code goes here
+      let maxid = 0;
+  this.todos.forEach((todo) => {
+    if(todo.id > maxid) {
+      maxid = parseInt(todo.id);
+    }
+  });
+  const todo = { id: maxid + 1, task: this.newTodo, completed: false };
     }
   },
   created() {

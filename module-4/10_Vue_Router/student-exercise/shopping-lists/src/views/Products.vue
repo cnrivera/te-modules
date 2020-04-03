@@ -4,6 +4,9 @@
     <p>Below is a list of our departments. Please click on a department to view available products by department.</p>
     <div class="departments">
       <!-- links to each department -->
+      <div v-for="department in departments" :key="department.id">  
+      <router-link :to="`/products${department.path}`" :class="department.class"><img v-bind:src="require('../assets/images/' + department.banner)"></router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +24,8 @@ export default {
       ]
     }
   }
+ 
+ 
 }
 </script>
 
