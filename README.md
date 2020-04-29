@@ -1,4 +1,4 @@
-# te-modules
+# Tech Elevator Class Module Assignments
 A collection of my assignments and lectures from Tech Elevator.
 
 These files include the following:
